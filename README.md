@@ -37,10 +37,10 @@ Digitando este comando em seu terminal ele ja começa a ser executado:
 Aqui estão as palavras chaves que estão em funcionamento.
 ```
 doc/documentacao
-conectividade
+listagem
 vulnerabilidade
 servicos
-atualize
+atualizar
 versao
 namoro
 criador
