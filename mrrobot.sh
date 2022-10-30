@@ -177,7 +177,7 @@ case $PERGUNTA in
         *"cria"*)
 	        criador 
       	  ;;
-	*"manha"*|*"manhã"*)
+	*"clima"*|*"tempo"*|*"hora"*|*"hoje"*)
 		tempo
           ;;
 	*"versão"*|*"versao"*)
