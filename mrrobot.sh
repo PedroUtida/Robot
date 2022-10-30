@@ -12,7 +12,7 @@ function inicio(){
         *0*)
             echo "Mr. Robot Iniciado!"
         	echo 
-        	echo "No caso de precisar de ajuda digitar 'doc' para olhar a docuemnatação"
+        	echo "No caso de precisar de ajuda digitar 'doc' para olhar a documentação"
         	echo
         	read -p "Mr. Robot espera a sua pergunta: " PERGUNTA
         ;;
