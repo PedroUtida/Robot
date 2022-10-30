@@ -103,16 +103,16 @@ h=$(date +"%H")
 	if [ $h -gt 6 -a $h -le 12 ]
 	then
 		echo "Bom Dia"
-	elif [ $h -gt 12 -a $h -le 16 ]
+	elif [ $h -gt 12 -a $h -le 18 ]
 	then 
 		echo "Boa Tarde"
-	elif [ $h -gt 16 -a $h -le 20 ]
+	elif [ $h -gt 18 -a $h -le 22 ]
 	then
 		echo "Boa Noite"
 	else
-		echo "Boa Noite,já é muito tarde"
+		echo " Tarde da noite, acho melhor descansar"
 	fi
-		echo "Como você vai?"
+		echo "Tomar um ar é bom as vezes."
 }
 function criador(){
 	echo -e "meu criador é $CRIADOR e seu RM é $RM"
