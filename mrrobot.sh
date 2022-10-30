@@ -1,14 +1,14 @@
 #!/bin/bash
 #
 
-NUM=$(($RANDOM%4))
+ALE=$(($RANDOM%4))
 CRIADOR="Pedro Utida"
 RM=94342
 
 
 
-function inicio(){
-  case $NUM in
+function comeco(){
+  case $ALE in
         *0*)
             echo "Mr. Robot Iniciado!"
         	echo 
@@ -17,7 +17,7 @@ function inicio(){
         	read -p "Mr. Robot espera a sua pergunta: " PERGUNTA
         ;;
         *1*)
-            echo "Meu nome é Mr. Robot!"
+            	echo "Meu nome é Mr. Robot!"
         	echo 
         	sleep 1
         	read -p "Pergunte algo! : " PERGUNTA
@@ -40,41 +40,9 @@ function inicio(){
         esac
 
 }
-function documentacao(){
-	echo "Esse Mr. Robot foi desenvolvido com intuito de apredizado."
-	echo
-	echo "Criado pelo $CRIADOR"
-	sleep 1
-	echo 
-	echo "Para usa-lo, digite robo e quando aparecer a mensagem de pergunta, responda com palavras minusculas"
-	sleep 1
-	echo   
-	echo "Para essa mensagem, digite doc"
-}
 
-
-function conectividade() {
-	read -p "Vamos ver a conectividade do IP por favor digite ele: " HOST
-COMMAND="ping -c4 -q $HOST" 
-$COMMAND
-	if [ $? -eq 0 ]
-	then
-		echo -e "\nO O IP se encontra ativo"
-	else
-		echo -e "\nO O IP se encontra inativo"
-	fi
-}
-function vulnerabilidade(){
-	read -p "Qual o host que irei escanear hoje?(Digite os numeros do IP): " IP
-		nmap -A -sC -sV $IP 2>/dev/null
-}
-function servicos(){
-	echo -e  "Os serviços rodando por agora são: "
-	echo
-		ss -atun
-}
 function namorar(){
-case $NUM in
+case $ALE in
 	*0*)
 	       echo "Eu não namoro, sou uma inteligência artificial"
 	  ;;
@@ -91,10 +59,37 @@ case $NUM in
 esac
 
 }
-function atualize(){
+function documentacao(){
+	echo "Esse Mr. Robot foi desenvolvido com intuito de apredizado."
+	echo
+	echo "Criado pelo $CRIADOR"
+	sleep 1
+	echo 
+	echo "Para usa-lo, digite robo e quando aparecer a mensagem de pergunta, responda com palavras minusculas"
+	sleep 1
+	echo   
+	echo "Para essa mensagem, digite doc"
+}
+
+
+function servicos(){
+	echo -e  "Os serviços rodando por agora são: "
+	echo
+		ss -atun
+}
+
+function atual(){
 	echo "Atualizando..."
 	sudo apt update
 }
+
+
+
+function vulnerabilidade(){
+	read -p "Qual o host que irei escanear hoje?(Digite os numeros do IP): " IP
+		nmap -A -sC -sV $IP 2>/dev/null
+}
+
 function versao ()
 {
 	echo "Posso estar numa versão antiga irei checar!"
@@ -123,8 +118,21 @@ function criador(){
 	echo -e "meu criador é $CRIADOR e seu RM é $RM"
 
 }
+
+function listagem() {
+	read -p "Vamos ver a conectividade do IP por favor digite ele: " HOST
+	LISTAR="ping -c4 -q $HOST" 
+	$LISTAR
+	if [ $? -eq 0 ]
+	then
+		echo -e "\nO O IP se encontra ativo"
+	else
+		echo -e "\nO O IP se encontra inativo"
+	fi
+}
+
 function destruir(){
-case $NUM in 
+case $ALE in 
 	*0*)
 		echo "Sequência de auto destruição!"
 		sleep 1
@@ -148,11 +156,11 @@ case $NUM in
 esac
 }
 
-inicio
+comeco
 
 case $PERGUNTA in
-	*"cone"*)
-		conectividade
+	*"list"*)
+		listagem
           ;;
 	*"namor"*)
 		namorar
@@ -163,8 +171,8 @@ case $PERGUNTA in
         *"servi"*)      
 		servicos
 	  ;;
-        *"atualiz"*)
-	        atualize
+        *"atual"*)
+	        atual
 	  ;;    
         *"cria"*)
 	        criador 
